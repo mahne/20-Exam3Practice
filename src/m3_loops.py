@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Ethan Mahn.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -46,7 +46,7 @@ def main():
 def run_test_practice_problem3():
     """ Tests the   practice_problem3  function. """
     ###########################################################################
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  practice_problem3  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -119,6 +119,19 @@ def run_test_practice_problem3():
                                    [888, 1000,
                                     - math.sqrt(2) - 0.00000000001],
                                    big_list))
+    # 15th test:
+    big_list = [0]
+    tests.append(st.SimpleTestCase(practice_problem3,
+                                   [0, 1,
+                                    0],
+                                   big_list))
+    # 16th test:
+    big_list = [0]
+    tests.append(st.SimpleTestCase(practice_problem3,
+                                   [-1, 1,
+                                    0],
+                                   big_list))
+
 
     # -------------------------------------------------------------------------
     # Run the 14 tests in the   tests   list constructed above.
@@ -217,6 +230,13 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ###########################################################################
+    list = []
+    k=start
+    while len(list) < n:
+        if math.sin(k)+math.cos(k) > threshold:
+            list.append(k)
+        k+=1
+    return list
 
 
 # -----------------------------------------------------------------------------
